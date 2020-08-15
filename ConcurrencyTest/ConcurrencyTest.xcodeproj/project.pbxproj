@@ -13,6 +13,7 @@
 		26DDB82824E83F470045DA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DDB82724E83F470045DA4D /* Assets.xcassets */; };
 		26DDB82B24E83F470045DA4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DDB82A24E83F470045DA4D /* Preview Assets.xcassets */; };
 		26DDB82E24E83F470045DA4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DDB82C24E83F470045DA4D /* LaunchScreen.storyboard */; };
+		26DDB83624E844470045DA4D /* CalculatePrimeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDB83524E844470045DA4D /* CalculatePrimeOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		26DDB82A24E83F470045DA4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26DDB82D24E83F470045DA4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26DDB82F24E83F470045DA4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DDB83524E844470045DA4D /* CalculatePrimeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePrimeOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				26DDB82C24E83F470045DA4D /* LaunchScreen.storyboard */,
 				26DDB82F24E83F470045DA4D /* Info.plist */,
 				26DDB82924E83F470045DA4D /* Preview Content */,
+				26DDB83524E844470045DA4D /* CalculatePrimeOperation.swift */,
 			);
 			path = ConcurrencyTest;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DDB83624E844470045DA4D /* CalculatePrimeOperation.swift in Sources */,
 				26DDB82224E83F460045DA4D /* AppDelegate.swift in Sources */,
 				26DDB82424E83F460045DA4D /* SceneDelegate.swift in Sources */,
 				26DDB82624E83F460045DA4D /* ContentView.swift in Sources */,
