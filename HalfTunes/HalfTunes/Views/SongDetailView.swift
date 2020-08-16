@@ -30,9 +30,25 @@ struct SongDetailView: View {
                         .shadow(radius: 10)
                     Text("\(self.musicItem.trackName) - \(self.musicItem.artistName)")
                     Text(self.musicItem.collectionName)
-                    Text("\(Int(self.download.downloadedAmount * 100))% downloaded").padding(.top)
-                    Button(action: self.downloadButtonTapped ) {
-                        Text(self.download.downloadLocation == nil ? "Download" : "Listen")
+                    if (self.download.state == .downloading || self.download.state == .paused) {
+                        Text("\(Int(self.download.downloadedAmount * 100))% downloaded").padding(.top)
+                    }
+                    HStack {
+                        Button<Text>(action: self.downloadButtonTapped ) {
+                            switch self.download.state {
+                            case .waiting:
+                                return Text("Dowloading")
+                            case .downloading:
+                                return Text("Pause")
+                            case .paused:
+                                return Text("Resume")
+                            case .finished:
+                                return Text("Listen")
+                            }
+                        }
+                        if (self.download.state == .downloading || self.download.state == .paused) {
+                            Text("Cancel")
+                        }
                     }.sheet(isPresented: self.$playMusic) {
                         return AudioPlayer(songUrl: self.download.downloadLocation!)
                     }
@@ -61,12 +77,17 @@ struct SongDetailView: View {
     }
     
     func downloadButtonTapped() {
-        if self.download.downloadLocation == nil {
+        switch self.download.state {
+        case .waiting:
             guard let previewUrl = self.musicItem.previewUrl else {
                 return
             }
             self.download.fetchSongAtUrl(previewUrl)
-        } else {
+        case .downloading:
+            self.download.pause()
+        case .paused:
+            self.download.resume()
+        case .finished:
             self.playMusic = true
         }
     }
